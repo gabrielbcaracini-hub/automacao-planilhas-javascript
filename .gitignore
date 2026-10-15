@@ -1,0 +1,37 @@
+# Credenciais e configuração local do clasp
+.clasp.json
+.clasprc.json
+*.clasprc.json
+client_secret*.json
+credentials.json
+token.json
+service-account*.json
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Dependências
+node_modules/
+package-lock.json
+
+# Arquivos gerados / exportados
+*.xlsx
+*.pdf
+*.docx
+exportacoes/
+relatorios-gerados/
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs e temporários
+*.log
+tmp/
+temp/

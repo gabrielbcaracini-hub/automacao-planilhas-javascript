@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      color: #1f2937;
+      font: 14px/1.45 Arial, Helvetica, sans-serif;
+    }
+    .pagina {
+      padding: 18px 20px 24px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .intro {
+      margin: 0 0 16px;
+      color: #4b5563;
+    }
+    .bloco {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px 16px 12px;
+      margin: 0 0 10px;
+    }
+    .topo {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .num {
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: #1d4ed8;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 22px;
+      text-align: center;
+    }
+    h2 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .onde {
+      margin: 0 0 8px;
+      color: #6b7280;
+      font-size: 12px;
+    }
+    .campo {
+      display: grid;
+      grid-template-columns: 168px 1fr;
+      gap: 8px 12px;
+      padding: 6px 0;
+      border-top: 1px solid #f3f4f6;
+    }
+    .campo b {
+      color: #111827;
+      font-weight: 700;
+    }
+    .campo span {
+      color: #374151;
+    }
+    .passo {
+      margin: 8px 0 0;
+      color: #374151;
+    }
+    .menu {
+      display: inline-block;
+      margin: 0 2px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: #eef2ff;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+    .rodape {
+      margin-top: 14px;
+      text-align: right;
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: #1d4ed8;
+      color: #fff;
+      font: 700 14px Arial, Helvetica, sans-serif;
+      padding: 8px 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="pagina">
+    <h1>Como usar</h1>
+    <p class="intro">A planilha mãe guarda o catálogo e junta os pedidos. Cada unidade pede na planilha dela.</p>
+
+    <section class="bloco">
+      <div class="topo"><div class="num">1</div><h2>Cadastrar produto</h2></div>
+      <p class="onde">Aba Produtos</p>
+      <div class="campo"><b>Categoria</b><span>Grupo do item. Exemplo: alimentação, papelaria, ares-condicionados.</span></div>
+      <div class="campo"><b>Produto</b><span>Nome do item que a unidade vai pedir.</span></div>
+      <div class="campo"><b>Pregão</b><span>Pregão desse produto. É esse texto que sai no relatório de pregões.</span></div>
+      <div class="campo"><b>Ativo = Sim</b><span>O item pode ir para as unidades e para o Resumo.</span></div>
+      <div class="campo"><b>Ativo = Não</b><span>O item sai das unidades e do Resumo. O cadastro continua nesta aba.</span></div>
+      <p class="passo">Use <span class="menu">Nova linha na aba Produtos</span>, preencha os campos e depois <span class="menu">Atualizar produtos nas unidades agora</span>.</p>
+    </section>
+
+    <section class="bloco">
+      <div class="topo"><div class="num">2</div><h2>O que entra neste mês</h2></div>
+      <p class="onde">Aba Categorias</p>
+      <div class="campo"><b>Sim</b><span>A categoria vai para as unidades e aparece no Resumo.</span></div>
+      <div class="campo"><b>Não</b><span>A categoria sai das unidades e do Resumo. Continua cadastrada em Produtos.</span></div>
+      <p class="passo">Marque Sim ou Não e rode <span class="menu">Atualizar produtos nas unidades agora</span>. Só entra o que estiver Sim e com Ativo = Sim.</p>
+    </section>
+
+    <section class="bloco">
+      <div class="topo"><div class="num">3</div><h2>Pedido da unidade</h2></div>
+      <p class="onde">Planilha de cada unidade</p>
+      <div class="campo"><b>Quantidade do Pedido</b><span>O que a unidade quer pedir. Coluna em âmbar.</span></div>
+      <div class="campo"><b>Observação</b><span>Texto livre. Pode ficar em branco.</span></div>
+      <div class="campo"><b>Status = Enviado</b><span>O item está pronto para a mãe puxar.</span></div>
+      <p class="passo">Na unidade, use <span class="menu">Enviar pedido completo</span>. Isso marca de uma vez todos os itens que têm quantidade.</p>
+    </section>
+
+    <section class="bloco">
+      <div class="topo"><div class="num">4</div><h2>Trazer os pedidos</h2></div>
+      <p class="onde">Planilha mãe</p>
+      <div class="campo"><b>Puxar pedidos</b><span>Menu <span class="menu">Puxar pedidos das unidades</span>. Lê o que está Enviado e grava no Resumo.</span></div>
+      <div class="campo"><b>Resumo</b><span>Gênero, depois o pregão, depois o produto. Cada coluna é uma unidade e a quantidade dela.</span></div>
+      <div class="campo"><b>Já pediram</b><span>Aba Pedidos das Unidades, coluna verde. A unidade já teve o pedido puxado.</span></div>
+      <div class="campo"><b>Ainda não pediram</b><span>Mesma aba, coluna laranja. A unidade ainda não enviou pedido.</span></div>
+      <p class="passo">A lista verde e laranja atualiza sozinha nessa puxada.</p>
+    </section>
+
+    <section class="bloco">
+      <div class="topo"><div class="num">5</div><h2>Relatórios</h2></div>
+      <p class="onde">Menu Sistema de Compras. O arquivo vai para uma pasta no Drive e o link aparece na tela.</p>
+      <div class="campo"><b>Baixar relatório Excel</b><span>Só os produtos que tiveram quantidade. Mostra pregão, produto e a quantidade de cada unidade.</span></div>
+      <div class="campo"><b>Pregões ativos</b><span>Pregões que têm produto com Ativo = Sim.</span></div>
+      <div class="campo"><b>Pregões inativos</b><span>Produtos com Ativo = Não.</span></div>
+    </section>
+
+    <section class="bloco">
+      <div class="topo"><div class="num">6</div><h2>Começar outro mês</h2></div>
+      <p class="onde">Menu <span class="menu">Nova rodada — limpar pedidos</span></p>
+      <div class="campo"><b>O que zera</b><span>Pedidos da mãe, Resumo, quadro de quem pediu e pedidos das unidades.</span></div>
+      <div class="campo"><b>O que fica</b><span>O catálogo da aba Produtos, com Sim e Não.</span></div>
+      <p class="passo">Se quiser guardar o mês, copie a planilha no Drive antes. Para um item voltar às unidades: Ativo = Sim e atualize os produtos.</p>
+    </section>
+
+    <div class="rodape">
+      <button type="button" onclick="google.script.host.close()">Fechar</button>
+    </div>
+  </div>
+</body>
+</html>
